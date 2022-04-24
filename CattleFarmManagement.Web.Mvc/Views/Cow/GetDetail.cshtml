@@ -1,0 +1,40 @@
+﻿@model CattleFarmManagement.Shared.Dtos.CowDtos.DetailCowDto
+
+
+    <div class="col-1"></div>
+    <div class="col-5">
+
+        @foreach (var item in Model.CowPictures)
+        {
+            <img src="\pictures\cow\@item.PictureName" class="img-thumbnail mt-3" style="max-width:250px;" alt="Alternate Text" />
+        }
+
+    <div class="card text-white bg-dark mb-3 mt-4" style="max-width: 30rem;">
+        <div class="card-header text-danger"><h2>@Model.TagNumber</h2></div>
+        <div class="card-body">
+            <h6 class="card-title"><strong class="text-primary">Name:</strong>@Model.Name</h6>
+            <p class="card-text"><strong class="text-primary">Age:</strong> @Model.Age</p>
+            <p class="card-text"><strong class="text-primary">Weight:</strong> @Model.Weight</p>
+            <p class="card-text"><strong class="text-primary">Description:</strong> @Model.Description</p>
+
+        </div>
+        <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-warning btn-block">Update</a>
+        <a href="#" class="btn btn-danger btn-block">Delete</a>
+        <a asp-controller="Cow" asp-action="Index" class="btn btn-info btn-block">Back to Cow List</a>
+
+    </div>
+
+
+
+
+    </div>
+    <div class="col-6 mt-4">
+        <a asp-action="Index" asp-controller="MilkRecord" asp-route-id="@Model.Id" class="btn btn-outline-primary">Milk Records</a>
+        <a asp-action="Index" asp-controller="Lactation" asp-route-id="@Model.Id" class="btn btn-outline-secondary ml-1">Lactations</a>
+        <a asp-action="Index" asp-controller="Semination" asp-route-id="@Model.Id" class="btn btn-outline-warning ml-1">Seminations</a>
+        <a asp-action="Index" asp-controller="Calving" asp-route-id="@Model.Id" class="btn btn-outline-success ml-1">Calvings</a><br />
+
+
+
+
+    </div>

@@ -1,0 +1,68 @@
+﻿@model CattleFarmManagement.Shared.Dtos.EmployeeDtos.CreateEmployeeDto
+
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form asp-action="Add" method="post" enctype="multipart/form-data" class="w-50">
+            <div asp-validation-summary="ModelOnly"></div>
+            <h6 class="text-primary">Employee Insert Page</h6>
+            <div class="form-group">
+                <label class="form-label" asp-for="Firstname"></label>
+                <input type="text" asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Lastname"></label>
+                <input type="text" asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="BirthDate"></label>
+                <input type="date" asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate"></span>
+            </div>
+
+            <div class="form-check">
+                <label class="form-label text-primary">Gender</label><br />
+                <input type="radio" asp-for="GenderType" name="gender" asp-item="Female" value="0" class="form-check-input" />
+                <label class="form-check-label">Female</label><br />
+                <input type="radio" asp-for="GenderType" name="Gender" asp-item="Male" value="1" class="form-check-input" />
+                <label class="form-check-label">Male</label><hr />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Picture</label>
+                <input type="file" asp-for="pictureFile" class="form-control-file" />
+            </div>
+
+            <hr />
+            <h6 class="text-primary">Employee's Contact'</h6>
+            <div class="form-group">
+                <label class="form-label" asp-for="PhoneNumber"></label>
+                <input type="tel" asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Email"></label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Address"></label>
+                <textarea asp-for="Address" class="form-control"></textarea>
+                <span asp-validation-for="Address"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Job</label>
+                <input type="text" asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description"></span>
+            </div>
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Add</button>
+            </div>
+        </form>
+           
+        </div>
+    <div class="col-2"></div>
+

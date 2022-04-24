@@ -1,0 +1,60 @@
+﻿@model CattleFarmManagement.Shared.Dtos.SeminationDtos.UpdateSeminationDto
+
+<div class="col-3"></div>
+<div class="col-6">
+    <h4 class="text-primary pb-3">Semination Update Page</h4>
+    <form asp-action="Update" method="post" class="w-50">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <input type="hidden" asp-for="CowId"  />
+        <div class="form-group">
+            <label class="form-label" asp-for="SeminationNumber"></label>
+            <input type="text" asp-for="SeminationNumber" class="form-control" />
+            <span asp-validation-for="SeminationNumber"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" asp-for="SeminationDate"></label>
+            <input type="date" asp-for="SeminationDate" class="form-control" />
+            <span asp-validation-for="SeminationDate"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" asp-for="BullId"></label>
+            <input type="text" asp-for="BullId" class="form-control" />
+            <span asp-validation-for="BullId"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" asp-for="SpermNumber"></label>
+            <input type="text"  asp-for="SpermNumber" class="form-control" />
+            <span asp-validation-for="SeminationNumber"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" asp-for="EmployeeId"></label>
+            <input type="text"  asp-for="EmployeeId" class="form-control" />
+            <span asp-validation-for="EmployeeId"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" asp-for="ControlDate"></label>
+            <input type="date" asp-for="ControlDate" class="form-control" />
+            <span asp-validation-for="ControlDate"></span>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" asp-for="IsGravid" class="form-check-input" />
+            <label class="form-check-label" asp-for="IsGravid"></label>
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="Description"></label>
+            <input type="text" asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"> Save</button>
+        </div>
+
+    </form>
+</div>
+<div class="col-3"></div>
+

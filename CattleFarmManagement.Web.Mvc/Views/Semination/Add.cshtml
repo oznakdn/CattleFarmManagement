@@ -1,0 +1,68 @@
+﻿@model CattleFarmManagement.Shared.Dtos.SeminationDtos.CreateSeminationDto
+
+    <div class="col-3"></div>
+    <div class="col-7">
+        <h4 class="text-primary mb-3">Semination Insert Page</h4>
+        <form asp-action="Add" method="post" class="w-50">
+            <input type="hidden" asp-for="CowId" />
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+            <div class="form-group">
+                <label class="form-label" asp-for="SeminationNumber"></label>
+                <input type="text" value="" asp-for="SeminationNumber" class="form-control" />
+                <span asp-validation-for="SeminationNumber"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" asp-for="SeminationDate"></label>
+                <input type="date" asp-for="SeminationDate" class="form-control" />
+                <span asp-validation-for="SeminationDate"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Father</label>
+                <select asp-for="BullId">
+                    @foreach (var item in ViewBag.bullId)
+                    {
+                        <option value="@item.ID">@item.Name - @item.TagNumber </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="SpermNumber"></label>
+                <input type="text" value="" asp-for="SpermNumber" class="form-control" />
+                <span asp-validation-for="SpermNumber"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Employee</label>
+                <select asp-for="EmployeeId">
+                    @foreach (var item in ViewBag.employeeId)
+                    {
+                        <option value="@item.ID">@item.Firstname @item.Lastname - @item.Description</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" asp-for="ControlDate"></label>
+                <input type="date" asp-for="ControlDate" class="form-control" />
+                <span asp-validation-for="ControlDate"></span>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" asp-for="IsGravid" class="form-check-input" />
+                <label class="form-check-label" asp-for="IsGravid"></label>
+            </div>
+            <div class="form-group mt-2">
+                <label class="form-label" asp-for="Description"></label>
+                <input type="text" value="" asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Add</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-2"></div>
+

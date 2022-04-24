@@ -1,0 +1,45 @@
+﻿@model List<CattleFarmManagement.Shared.Dtos.CalvingDtos.ListCalvingsDto>
+
+<div class="col-12">
+    <a asp-action="GetDetail" asp-controller="Cow" asp-route-id="@ViewData["cowId"]" class="link-warning">Back to Cow Details</a>
+    <a asp-action="Add" asp-controller="Calving" asp-route-id="@ViewData["cowId"]" class="btn btn-primary btn-block mt-4"><span class="fas fa-plus"></span> New</a>
+    <table class="table table-hover table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Picture</th>
+                <th>Drying Date</th>
+                <th>Birth Date</th>
+                <th>Drying Period(Day)</th>
+                <th>Gender</th>
+                <th>Is Alive</th>
+                <th>Borning Type</th>
+                <th>Weight</th>
+                <th>Father ID</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="\pictures\calv\@item.CalvPictures.FirstOrDefault().PictureName" class="img-thumbnail" style="max-width:70px; border-radius:25%;" />
+                    </td>
+                    <td>@item.DryingDate.ToShortDateString()</td>
+                    <td>@item.BirthDate.ToShortDateString()</td>
+                    <td>@item.DryingPeriod</td>
+                    <td>@item.Gender</td>
+                    <td>@item.IsAlive</td>
+                    <td>@item.BorningType</td>
+                    <td>@item.Weight</td>
+                    <td>@item.BullId</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.ID" class="btn btn-warning">Update</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

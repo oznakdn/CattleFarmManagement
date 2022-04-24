@@ -1,0 +1,74 @@
+﻿@model CattleFarmManagement.Shared.Dtos.CowDtos.CreateCowDto
+
+
+<div class="col-3"></div>
+<div class="col-6">
+    <h4 class="text-primary mb-3">Cow Insert Page</h4>
+    <form asp-action="Add" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" asp-for="Name" value="" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Tag Number</label>
+            <input type="text" asp-for="TagNumber" value="" class="form-control" />
+            <span asp-validation-for="TagNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Age</label>
+            <input type="text" asp-for="Age" value="" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Weight</label>
+            <input type="text" asp-for="Weight" value="" class="form-control" />
+            <span asp-validation-for="Weight" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Description</label>
+            <input type="text" asp-for="Description" value="" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        @*<div class="form-check">
+                <input type="radio" asp-for="SpeciesType" asp-item="Calf" name="Species" value="1" class="form-check-input" />
+                <label asp-for="SpeciesType" class="form-label">Calf</label><br />
+
+                <input type="radio" asp-for="SpeciesType" asp-item="Heifer" name="Species" value="2" class="form-check-input" />
+                <label asp-for="SpeciesType" class="form-label">Heifer</label><br />
+
+                <input type="radio" asp-for="SpeciesType" asp-item="Cow" name="Species" value="3" class="form-check-input" />
+                <label asp-for="SpeciesType" class="form-label">Cow</label><br />
+
+                <input type="radio" asp-for="SpeciesType" asp-item="Bull" name="Species" value="4" class="form-check-input" />
+                <label asp-for="SpeciesType" class="form-label">Bull</label>
+            </div>*@
+
+        <div class="form-check">
+            <input type="checkbox" asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label">Is Active</label>
+        </div>
+
+        <div class="form-group mt-2">
+            <label class="form-label" asp-for="picturFiles"></label>
+            <input type="file" asp-for="picturFiles" multiple class="form-control-file" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Insert</button>
+            <button type="reset" class="btn btn-danger btn-block">Clear</button>
+            <a asp-action="Index" class="btn btn-warning btn-block"><span class="fas fa-back"></span> Back</a>
+        </div>
+
+    </form>
+</div>
+
+<div class="col-3">
+    
+</div>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

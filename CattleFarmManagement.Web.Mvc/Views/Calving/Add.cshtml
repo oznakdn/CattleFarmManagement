@@ -1,0 +1,78 @@
+﻿@model CattleFarmManagement.Shared.Dtos.CalvingDtos.CreateCalvingDto
+
+    <div class="col-3"></div>
+    <div class="col-7">
+        <form asp-action="Add" method="post" class="w-50" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="CowId" />
+            <div class="form-group">
+                <label class="form-label text-primary" asp-for="DryingDate"></label>
+                <input type="date" asp-for="DryingDate" class="form-control" />
+                <span asp-validation-for="DryingDate"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label text-primary" asp-for="BirthDate"></label>
+                <input type="date" asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label text-primary" asp-for="DryingPeriod"></label>
+                <input type="text" asp-for="DryingPeriod" class="form-control" readonly />
+                <span asp-validation-for="DryingPeriod"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label text-primary" asp-for="Weight"></label>
+                <input type="text" value="" asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label text-primary">Father</label>
+                <select asp-for="BullId" class="form-control">
+                    @foreach (var item in ViewBag.bullId)
+                    {
+                        <option value="@item.ID">@item.Name - @item.TagNumber</option>
+                    }
+                </select>
+            </div>
+            <div class="form-check">
+                <label class="form-label text-primary">Gender</label><br />
+                <input type="radio" asp-for="Gender" name="gender" asp-item="Female" value="0" class="form-check-input" />
+                <label class="form-check-label">Female</label><br />
+                <input type="radio" asp-for="Gender" name="Gender" asp-item="Male" value="1" class="form-check-input" />
+                <label class="form-check-label">Male</label><hr />
+
+            </div>
+
+            <div class="form-check">
+                <label class="form-label text-primary">Borning Type</label><br />
+                <input type="radio" asp-for="BorningType" name="gender" asp-item="Easy" value="0" class="form-check-input" />
+                <label class="form-check-label">Easy</label><br />
+                <input type="radio" asp-for="BorningType" name="Gender" asp-item="Hard" value="1" class="form-check-input" />
+                <label class="form-check-label">Hard</label><hr />
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" asp-for="IsAlive" class="form-check-input" />
+                <label class="form-check-label" asp-for="IsAlive"></label><hr />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label text-primary" asp-for="Description"></label>
+                <input type="text" asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description"></span>
+            </div>
+
+
+            <div class="form-check">
+                <label class="form-label text-primary" asp-for="pictureFiles">Pictures</label>
+                <input type="file" asp-for="pictureFiles" class="form-control-file" multiple />
+            </div>
+            <div class="form-group mt-2">
+                <button type="submit" class="btn btn-primary btn-block">Add</button>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="col-2"></div>
+

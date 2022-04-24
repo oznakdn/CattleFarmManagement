@@ -1,0 +1,44 @@
+﻿@model CattleFarmManagement.Shared.Dtos.BullDtos.UpdateBullDto
+
+<div class="col-3"></div>
+<div class="col-7">
+    <h4 class="text-primary">Bull Insert Page</h4>
+
+    <form asp-action="Update" method="post" enctype="multipart/form-data" class="w-50">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TagNumber" class="form-label"></label>
+            <input type="text" asp-for="TagNumber" class="form-control" />
+            <span asp-validation-for="TagNumber"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age" class="form-label"></label>
+            <input type="text" asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Weight" class="form-label"></label>
+            <input type="text" asp-for="Weight" class="form-control" />
+            <span asp-validation-for="Weight"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="form-label"></label>
+            <input type="text" asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Add</button>
+        </div>
+    </form>
+</div>
+
+<div class="col-2"></div>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+

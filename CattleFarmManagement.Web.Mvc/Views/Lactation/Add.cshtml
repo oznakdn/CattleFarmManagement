@@ -1,0 +1,68 @@
+﻿@model CattleFarmManagement.Shared.Dtos.LactationDtos.CreateLactationDto
+
+
+<div class="col-3"></div>
+<div class="col-7">
+    <form asp-action="Add" method="post" class="w-50">
+        <h4 class="text-primary mb-3">Lactation Insert Page</h4>
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="CowId" />
+
+        <div class="form-group">
+            <label class="form-label">Lactation Number</label>
+            <input type="text" value="" asp-for="LactationNumber" class="form-control" />
+            <span asp-validation-for="LactationNumber"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Start Date</label>
+            <input type="date" value="" asp-for="StartDate" class="form-control" />
+            <span asp-validation-for="StartDate"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">End Date</label>
+            <input type="date" value="" asp-for="FinishDate" class="form-control" />
+            <span asp-validation-for="FinishDate"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Day</label>
+            <input type="text" value="" asp-for="LactationDay" class="form-control" />
+            <span asp-validation-for="LactationDay"></span>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Total Day</label>
+            <input type="text" value="" asp-for="TotalDay" readonly class="form-control" />
+            <span asp-validation-for="TotalDay"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Total Milk Quantity</label>
+            <input type="text" value="" asp-for="TotalMilking" class="form-control" />
+            <span asp-validation-for="TotalMilking"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Average Milk Quantity</label>
+            <input type="text" value="" asp-for="AvarageDailyMilking" class="form-control" />
+            <span asp-validation-for="AvarageDailyMilking"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Description</label>
+            <input type="text" value="" asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" asp-for="IsDry" class="form-check-input" />
+            <label asp-for="IsDry">Is Dry?</label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block mt-1">Add</button>
+        </div>
+
+    </form>
+
+</div>
+<div class="col-2"></div>

@@ -1,0 +1,45 @@
+﻿@model CattleFarmManagement.Shared.Dtos.MilkRecordDtos.UpdateMilkRecordDto
+
+<div class="col-4">
+
+</div>
+
+<div class="col-4">
+    <h4 class="text-primary mb-5">Milk Recording Edit Page</h4>
+    <form asp-action="Update" method="post">
+        <input type="hidden" asp-for="CowId"  />
+
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div class="form-group">
+            <label class="form-label">Record Number</label>
+            <input type="text" asp-for="RecordNumber" class="form-control" />
+            <span asp-validation-for="RecordNumber"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Record Date</label>
+            <input type="date" asp-for="RecordDate" class="form-control" />
+            <span asp-validation-for="RecordDate"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Quantity</label>
+            <input type="text" asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Description</label>
+            <input type="text" asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"><span class="fas fa-floppy-disk"></span> Save</button>
+        </div>
+    </form>
+</div>
+
+<div class="col-4">
+
+</div>

@@ -1,0 +1,40 @@
+﻿@model List<CattleFarmManagement.Shared.Dtos.SeminationDtos.ListSeminationsDto>
+
+<div class="col-12">
+    <a asp-action="GetDetail" asp-controller="Cow" asp-route-id="@ViewData["cowId"]" class="link-warning">Back to Cow Details</a>
+    <a asp-action="Add" asp-controller="Semination" asp-route-id="@ViewData["cowId"]" class="btn btn-primary btn-block mt-4"><span class="fas fa-plus"></span> New</a>
+    <table class="table table-hover table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Semination Number</th>
+                <th>Semination Date</th>
+                <th>Father ID</th>
+                <th>Sperm Number</th>
+                <th>Employee ID</th>
+                <th>Control Date</th>
+                <th>Is Gravid</th>
+                <th>Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SeminationNumber</td>
+                    <td>@item.SeminationDate</td>
+                    <td>@item.BullId</td>
+                    <td>@item.SpermNumber</td>
+                    <td>@item.EmployeeId</td>
+                    <td>@item.ControlDate</td>
+                    <td>@item.IsGravid</td>
+                    <td>@item.Description</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,42 @@
+﻿@model CattleFarmManagement.Shared.Dtos.MilkRecordDtos.CreateMilkRecordDto
+
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h4 class="text-primary mb-5">Milk Recording Insert Page</h4>
+        <form asp-action="Add" method="post" class="w-50">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="CowId" />
+
+            <div class="form-group">
+                <label class="form-label">Record Number</label>
+                <input type="text" value="" asp-for="RecordNumber" class="form-control" />
+                <span asp-validation-for="RecordNumber"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Record Date</label>
+                <input type="date" value="" asp-for="RecordDate" class="form-control" />
+                <span asp-validation-for="RecordDate"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Quantity</label>
+                <input type="text" value="" asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Description</label>
+                <input type="text" value="" asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block mt-5">Add</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

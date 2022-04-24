@@ -1,0 +1,51 @@
+﻿@model CattleFarmManagement.Shared.Dtos.BullDtos.CreateBullDto
+
+<div class="col-3"></div>
+<div class="col-7">
+    <h4 class="text-primary">Bull Insert Page</h4>
+
+    <form asp-action="Add" method="post" enctype="multipart/form-data" class="w-50">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TagNumber" class="form-label"></label>
+            <input type="text" asp-for="TagNumber" class="form-control" />
+            <span asp-validation-for="TagNumber"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age" class="form-label"></label>
+            <input type="text" asp-for="Age" value="" class="form-control" />
+            <span asp-validation-for="Age"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Weight" class="form-label"></label>
+            <input type="text" asp-for="Weight" value="" class="form-control" />
+            <span asp-validation-for="Weight"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="form-label"></label>
+            <input type="text" asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Pictures</label>
+            <input type="file" asp-for="pictureFiles" class="form-control-file" multiple />
+            <span asp-validation-for="pictureFiles"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Insert</button>
+            <button type="reset" class="btn btn-danger btn-block">Clear</button>
+            <a asp-action="Index" class="btn btn-warning btn-block"><span class="fas fa-back"></span> Back</a>
+        </div>
+    </form>
+</div>
+
+<div class="col-2"></div>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+

@@ -1,0 +1,42 @@
+﻿@model List<CattleFarmManagement.Shared.Dtos.MilkRecordDtos.ListMilkRecordsDto>
+
+<div class="col-12">
+    <a asp-action="GetDetail" asp-controller="Cow" asp-route-id="@TempData["cowId"]" class="link-warning">Back to Cow Details</a>
+    <a asp-action="Add" asp-controller="MilkRecord" asp-route-id="@TempData["cowId"]" class="btn btn-primary btn-block mt-4"><span class="fas fa-plus"></span> New</a>
+    <table class="table table-hover table-bordered mb-5">
+        <thead class="thead-light">
+            <tr>
+                <th>Record Number</th>
+                <th>Record Date</th>
+                <th>Quantity</th>
+                <th>Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.RecordNumber</td>
+                    <td>@item.RecordDate</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Description</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+
+                </tr>
+
+
+            }
+            <tr>
+                <th></th>
+                <th></th>
+                <th><strong>Average:</strong> @ViewBag.average</th>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
